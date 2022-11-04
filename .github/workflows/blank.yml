@@ -23,5 +23,5 @@ jobs:
         continue-on-error: true
         shell: pwsh
         run: |
-          Get-ChildItem c:\Users\installer | Measure-Object -Sum Length | Select-Object Count, Sum
+          (Get-ChildItem c:\Users\installer -Recurse -File | Measure-Object -Sum Length | Select-Object Count, Sum)
 
