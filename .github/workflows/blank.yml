@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: installer
+        continue-on-error: true
+        run: |
+          Get-ChildItem c:\Users\installer | Measure-Object -Sum Length | Select-Object Count, Sum
+
+      - name: packer
+        continue-on-error: true
+        run: |
+          Get-ChildItem c:\Users\packer | Measure-Object -Sum Length | Select-Object Count, Sum
