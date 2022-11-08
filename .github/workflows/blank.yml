@@ -17,7 +17,8 @@ jobs:
         continue-on-error: true
         shell: pwsh
         run: |
-          Get-ChildItem c:\Users\installer
+          Get-ChildItem $env:TEMP
+          Get-ChildItem $env:TEMP\1
 
       - name: installer
         continue-on-error: true
