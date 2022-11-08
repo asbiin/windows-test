@@ -16,7 +16,7 @@ jobs:
       - name: list
         shell: pwsh
         run: |
-          Get-ChildItem ${env:TEMP}\1
+          Get-ChildItem -recurse c:\Users\installer\AppData\Local\Temp
 
       - name: installer
         shell: pwsh
