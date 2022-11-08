@@ -21,5 +21,5 @@ jobs:
       - name: installer
         shell: pwsh
         run: |
-          (Get-ChildItem c:\Users\installer -Recurse -Hidden -File | Measure-Object -Sum Length | Select-Object Count, Sum)
+          (Get-ChildItem c:\Users\installer -Recurse -Force -File | Measure-Object -Sum Length | Select-Object Count, Sum)
 
