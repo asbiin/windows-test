@@ -14,13 +14,11 @@ jobs:
 
     steps:
       - name: list
-        continue-on-error: true
         shell: pwsh
         run: |
-          Get-ChildItem $env:TEMP\1
+          Get-ChildItem ${env:TEMP}\1
 
       - name: installer
-        continue-on-error: true
         shell: pwsh
         run: |
           (Get-ChildItem c:\Users\installer -Recurse -File | Measure-Object -Sum Length | Select-Object Count, Sum)
